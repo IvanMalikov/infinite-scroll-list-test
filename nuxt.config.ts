@@ -1,7 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
-  target: 'static',
   ssr: false,
   devtools: { enabled: true },
   modules: [
@@ -9,7 +8,17 @@ export default defineNuxtConfig({
     '@vueuse/nuxt'
   ],
   plugins: ["~/plugins/vue-query.ts"],
-  api: {
-    baseURL: '/infinite-scroll-list/'
-  }
+  app: {
+    baseURL: process.env.NUXT_APP_BASE_URL || '/'
+  },
+  runtimeConfig: {
+    public: {
+      apiBase: '/api'
+    }
+  },
+  nitro: {
+    prerender: {
+      routes: ['/']
+    }
+  },
 })
