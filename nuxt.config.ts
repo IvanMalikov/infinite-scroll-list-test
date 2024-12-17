@@ -10,6 +10,6 @@ export default defineNuxtConfig({
   ],
   plugins: ["~/plugins/vue-query.ts"],
   app: {
-    baseURL: '/infinite-scroll-test/', // Replace with your GitHub repository name
+    baseURL: '/infinite-scroll-test/'
   }
 })
