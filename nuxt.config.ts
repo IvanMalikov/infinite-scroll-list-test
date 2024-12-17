@@ -8,8 +8,5 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
     '@vueuse/nuxt'
   ],
-  plugins: ["~/plugins/vue-query.ts"],
-  app: {
-    baseURL: '/infinite-scroll-test/'
-  }
+  plugins: ["~/plugins/vue-query.ts"]
 })
