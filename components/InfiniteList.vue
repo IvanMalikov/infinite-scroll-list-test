@@ -70,8 +70,12 @@ const toggleSort = (): void => {
     sortOrder.value = sortOrder.value === 'asc' ? 'desc' : 'asc'
 }
 
+const apiHost = computed(() => {
+    return window.location.hostname.includes('localhost') ? '' : window.location.origin
+})
+
 const request = async({ pageParam = 1 }): Promise<ApiResponse> => {
-    const { data } =  await axios.get('api/items', {
+    const { data } =  await axios.get(`${apiHost.value}/api/items`, {
         params: { page: pageParam },
     })
 
