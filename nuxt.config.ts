@@ -10,15 +10,5 @@ export default defineNuxtConfig({
   plugins: ["~/plugins/vue-query.ts"],
   app: {
     baseURL: process.env.NUXT_APP_BASE_URL || '/'
-  },
-  runtimeConfig: {
-    public: {
-      apiBase: '/api'
-    }
-  },
-  nitro: {
-    prerender: {
-      routes: ['/']
-    }
-  },
+  }
 })
